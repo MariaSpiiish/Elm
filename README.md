@@ -1,2 +1,5 @@
-# Elm
-To compile Elm project run `elm reactor` in the terminal
+# How to run
+
+```sh
+⋊> elm reactor
+```
