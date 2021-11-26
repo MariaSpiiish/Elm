@@ -46,8 +46,11 @@ type Msg
 update : Msg -> Model -> Model
 update msg model =
   case msg of
-    Change newInput ->
+    ChangeCelsius newInput ->
       { model | celsius = newInput }
+
+    ChangeInches newInput ->
+      { model | inches = newInput}
 
 
 
@@ -59,7 +62,7 @@ view model =
     div [] 
        [ div [] 
            [span []
-               [ input [ value model.celsius, onInput Change, style "width" "40px" ] []
+               [ input [ value model.celsius, onInput ChangeCelsius, style "width" "40px" ] []
                , text "°C = "
                , span [ style "color" (foo model.celsius) ] [ text (bar model.celsius) ]
                , text "°F"
@@ -67,7 +70,7 @@ view model =
         ]
         , div [] 
            [span []
-               [ input [ value model.inches, onInput Change, style "width" "40px" ] []
+               [ input [ value model.inches, onInput ChangeInches, style "width" "40px" ] []
                , text " Inches = "
                , span [ style "color" (foo model.inches) ] [ text (bar2 model.inches) ]
                , text " Metres"
