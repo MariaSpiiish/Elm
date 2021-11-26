@@ -39,7 +39,8 @@ init =
 
 
 type Msg
-  = Change String
+  = ChangeCelsius String
+  | ChangeInches String
 
 
 update : Msg -> Model -> Model
